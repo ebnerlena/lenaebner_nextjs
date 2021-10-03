@@ -1,4 +1,6 @@
-import { parseISO, format } from 'date-fns'
+/* eslint-disable react/prop-types */
+import { format, parseISO } from 'date-fns'
+import React from 'react'
 
 export default function Date({ dateString }) {
   const date = parseISO(dateString)
