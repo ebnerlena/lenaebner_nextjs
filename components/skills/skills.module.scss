@@ -1,0 +1,60 @@
+@import '/styles/mixins.scss';
+
+.skills {
+  .skills__list {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-top: 4%;
+    list-style-type: disclosure-closed;
+    align-self: flex-start;
+    padding-left: 15vw;
+
+    @include mobile {
+      font-size: 1.1rem;
+    }
+
+    @include tablet {
+      font-size: 1.4rem;
+      padding-left: 10vw;
+    }
+
+    li {
+      padding: 1rem 0.5rem;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  div {
+    .technologies {
+      text-align: right;
+      font-size: 1.7rem;
+
+      @include mobile {
+        font-size: 1.12rem;
+        text-align: center;
+      }
+
+      @include tablet {
+        font-size: 1.48rem;
+      }
+    }
+
+    p {
+      font-size: 1.6rem;
+      width: 60vw;
+      margin: 4% 0;
+
+      @include mobile {
+        font-size: 1.1rem;
+        width: 90vw;
+      }
+
+      @include tablet {
+        font-size: 1.45rem;
+      }
+    }
+  }
+}

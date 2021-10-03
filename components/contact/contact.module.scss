@@ -1,0 +1,90 @@
+@import '/styles/mixins.scss', '/styles/colors.scss';
+
+.contact {
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+    align-items: center;
+  }
+
+  img {
+    width: 40px;
+    display: inline-block;
+
+    @include mobile {
+      width: 20px;
+    }
+  }
+
+  p {
+    display: inline;
+    margin-left: 4%;
+    font-size: 1.2em;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
+  }
+
+  h3 {
+    padding-top: 50px;
+    padding-left: 50px;
+    align-self: flex-start;
+
+    @include mobile {
+      font-size: 0.95rem;
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.contact_details {
+  width: 100%;
+  list-style: none;
+  text-align: left;
+  margin: auto;
+  align-items: center;
+  padding: 50px;
+  border-radius: 3px;
+  font-size: 20px;
+  padding-top: 0;
+
+  @include mobile {
+    width: 85vw;
+    padding: 0;
+    font-size: 0.9rem;
+    margin-left: 2%;
+  }
+
+  @include tablet {
+    font-size: 1.1rem;
+  }
+
+  & > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+    margin-top: 0%;
+    align-items: center;
+
+    a {
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  & > div {
+    @include mobile {
+      font-size: 0.7rem;
+      margin-left: 2%;
+    }
+  }
+}

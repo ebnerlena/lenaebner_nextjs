@@ -1,0 +1,90 @@
+@import '/styles/mixins.scss';
+
+.projects {
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 4%;
+    align-items: center;
+    list-style: none;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .single__project {
+      width: 20vw;
+      max-width: 500px;
+      border-radius: 6px;
+      margin: 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease-in;
+
+      @include tablet {
+        width: 65vw;
+        max-width: 400px;
+      }
+
+      @include mobile {
+        width: 90vw;
+        margin: 1% 0;
+        max-width: 350px;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 5px rgb(100, 99, 99);
+        transform: scale(1.03);
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        div {
+          width: 80%;
+
+          img {
+            width: 80%;
+            height: 250px;
+            object-fit: contain;
+
+            @include mobile {
+              width: 70%;
+              height: 200px;
+            }
+          }
+        }
+      }
+
+      h3 {
+        font-family: Roboto;
+        letter-spacing: 2px;
+        height: 80px;
+        margin-bottom: 0;
+        padding-top: 1rem;
+
+        @include mobile {
+          font-size: 1rem;
+          height: 40px;
+        }
+      }
+
+      p {
+        padding: 2% 4%;
+        font-size: 1.1rem;
+        height: 80px;
+
+        @include mobile {
+          font-size: 0.9rem;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

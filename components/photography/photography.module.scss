@@ -1,0 +1,35 @@
+@import '/styles/mixins.scss';
+
+.photogallery {
+  width: 90vw;
+
+  @include tablet {
+    width: 100vw;
+  }
+
+  a {
+    color: rgba(30, 30, 30, 1);
+  }
+
+  div {
+    @include mobile {
+      margin-top: 4%;
+    }
+  }
+
+  img {
+    transition: all 0.3s ease-in;
+
+    @include mobile {
+      width: 40vw;
+    }
+
+    @include tablet {
+      width: 25vw;
+    }
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+}

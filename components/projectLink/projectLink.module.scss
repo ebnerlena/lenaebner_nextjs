@@ -1,0 +1,28 @@
+@import '/styles/mixins.scss';
+
+.link__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 0.2rem 0;
+
+  .link {
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+      margin-left: 10px;
+    }
+  }
+}

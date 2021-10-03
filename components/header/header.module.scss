@@ -1,0 +1,308 @@
+@import '/styles/mixins.scss', '/styles/colors.scss';
+
+.header {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+
+  will-change: background-color;
+  transition: background-color 1s;
+
+  @include mobile {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    padding-top: 0px;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    padding-top: 0px;
+  }
+
+  .nav__tgl {
+    @include desktop {
+      display: none;
+    }
+
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24);
+    line-height: 0.5;
+    text-align: center;
+  }
+
+  .nav__tgl > span {
+    display: inline-block;
+    position: relative;
+    height: 2px;
+    width: 27px;
+    border-radius: 1px;
+    background: #293335;
+    vertical-align: middle;
+  }
+
+  .nav__tgl > span:before,
+  .nav__tgl > span:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    border-radius: 1px;
+    background: #293335;
+    transition: all 200ms;
+  }
+
+  .nav__tgl > span:before {
+    top: -12px;
+    left: 3px;
+    width: 20px;
+  }
+
+  .nav__tgl > span:after {
+    top: 10px;
+    left: 3px;
+    width: 20px;
+  }
+
+  .nav__tgl:focus {
+    outline: none;
+  }
+
+  .nav__tgl:hover > span:after,
+  .nav__tgl:hover > span:before {
+    width: 29px;
+    left: 0;
+  }
+
+  .nav__tgl_toggled > span {
+    height: 0;
+  }
+
+  .nav__tgl_toggled > span:after,
+  .nav__tgl_toggled > span:before {
+    top: -3px;
+    left: -1px;
+    width: 29px;
+  }
+
+  .nav__tgl_toggled:hover > span:after,
+  .nav__tgl_toggled:hover > span:before {
+    width: 32px;
+    left: -2px;
+    top: -2px;
+  }
+
+  .nav__tgl_toggled > span:after {
+    transform: rotate(-45deg);
+  }
+
+  .nav__tgl_toggled > span:before {
+    transform: rotate(45deg);
+  }
+  :target:before {
+    content: '';
+    display: block;
+    height: 170px;
+
+    @include mobile {
+      height: 50px;
+    }
+
+    @include tablet {
+      height: 50px;
+    }
+  }
+
+  .logo {
+    height: 6vw;
+
+    @include mobile {
+      height: auto;
+      width: 120px;
+    }
+
+    @include tablet {
+      height: auto;
+      width: 150px;
+    }
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+.header__fixed {
+  background-color: $headerFixedBackgroundColor;
+}
+
+.nav {
+  display: block;
+  width: 70vw;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  margin-top: 5px;
+  will-change: background-color;
+  transition: background-color 2s;
+
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  .nav__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-wrap: wrap;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    .nav__list_item {
+      @include mobile {
+        width: 60vw;
+      }
+
+      @include tablet {
+        width: 50vw;
+      }
+    }
+  }
+}
+.nav__fixed {
+  background: $secondaryColor;
+}
+
+.nav_mobile {
+  @include desktop {
+    display: none;
+  }
+
+  width: 100vw;
+  align-items: center;
+  display: block;
+
+  &:before {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: $primaryColor;
+    transition: all 500ms ease-in-out;
+    clip-path: circle(30px at calc(100% - 65px) 65px);
+    visibility: hidden;
+  }
+
+  .nav__list {
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    .nav__list_item {
+      font-size: 1.5rem;
+      padding: 1.5%;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: $secondaryColor;
+      }
+
+      a {
+        text-decoration: none;
+        color: $basicTextColor;
+      }
+    }
+  }
+}
+
+.nav_mobile__visible .nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-evenly;
+  height: 70vh;
+  margin: 5vh auto auto auto;
+  width: 100vw;
+  left: 0;
+  padding-left: 0;
+  align-items: center;
+}
+
+.nav_mobile__visible:before {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+
+.nav__fixed .nav__list {
+  border-radius: 3px;
+
+  .nav__list_item {
+    border-radius: 3px;
+  }
+
+  .nav__list_item:hover {
+    background-color: $accentColor;
+  }
+}
+
+.nav .nav__list {
+  .nav__list_item {
+    font-size: 1.5rem;
+    padding: 1.5%;
+    border-radius: 3px;
+
+    a {
+      text-decoration: none;
+      color: $basicTextColor;
+    }
+
+    &:hover {
+      background-color: $secondaryColor;
+    }
+
+    &:after {
+      position: normal;
+    }
+  }
+}

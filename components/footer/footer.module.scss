@@ -1,0 +1,41 @@
+@import "/styles/mixins.scss", "/styles/colors.scss";
+
+.footer {
+  font-size: 1.3vw;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 2% 2% 2% 1%;
+  text-align: left;
+  background-color: $secondaryColor;
+  color: white;
+
+  @include mobile {
+    padding: 5%;
+    text-align: center;
+    height: 30vh;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    height: 20vh;
+    align-items: flex-end;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: auto;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: auto;
+    }
+  }
+}
