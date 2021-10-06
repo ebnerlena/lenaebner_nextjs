@@ -61,6 +61,7 @@ const Header = () => {
               className={styles.logo}
               width="200rem"
               height="100rem"
+              priority={true}
               src={`${
                 headerFixed ? '/images/logoblack.png' : '/images/logowhite.png'
               }`}

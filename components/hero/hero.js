@@ -30,6 +30,7 @@ const Hero = () => {
             src="/images/le.jpg"
             alt="Logo LE"
             width="500px"
+            priority={true}
             height="500px"
           />
         </div>

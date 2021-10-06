@@ -13,6 +13,7 @@ const About = () => {
             alt="Portrait Lena Ebner"
             width="10rem"
             height="15rem"
+            priority={true}
             layout="responsive"
           />
         </div>
