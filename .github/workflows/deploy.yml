@@ -5,7 +5,6 @@ on:
   pull_request:
     branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   deploy:
@@ -17,16 +16,24 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-        run: npm install -g yarn
-        run: yarn install --frozen-lockfile
-        run: yarn build
-      - name: RSync Deployment
-        uses: burnett01/rsync-deployments@4.1
+      - run: npm install -g yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
         with:
-          switches: -avzr --delete --exclude="" --include="" --filter=""
-          path: ./
-          remote_path: /var/www/lenaebner/
-          remote_host: ${{ secrets.DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.DEPLOY_USER }}
-          remote_key: ${{ secrets.DEPLOY_KEY }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+      - name: Deploy with rsync
+        run: rsync -avz ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/lenaebner/
+#         uses: burnett01/rsync-deployments@4.1
+#         with:
+#           switches: -avzr --delete --exclude="" --include="" --filter=""
+#           path: ./
+#           remote_path: /var/www/lenaebner.com/
+#           remote_host: ${{ secrets.DEPLOY_HOST }}
+#           remote_port: ${{ secrets.DEPLOY_PORT }}
+#           remote_user: ${{ secrets.DEPLOY_USER }}
+#           remote_key: ${{ secrets.DEPLOY_KEY }}
