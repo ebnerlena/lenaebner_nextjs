@@ -15,6 +15,7 @@ const Project = ({ id, title, date, text, image }) => {
               src={`/images/projects/${image}`}
               height="2em"
               width="3em"
+              priority={true}
               layout="responsive"
               alt={`Project: ${title}`}
             />
