@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import styles from './header.module.scss'
+import Head from "next/head"
+import Image from "next/image"
+import { useEffect, useState } from "react"
+import styles from "./header.module.scss"
 
 const Header = () => {
   const [navVisibility, setNavVisibility] = useState(false)
   const [headerFixed, setHeaderFixed] = useState(false)
-  const navItems = ['about', 'skills', 'projects', 'photography', 'contact']
+  const navItems = ["about", "skills", "projects", "photography", "contact"]
 
   const handleScroll = () => {
     if (window.pageYOffset > 200) {
@@ -17,8 +17,8 @@ const Header = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   })
 
   const toogleMenu = () => {
@@ -31,8 +31,8 @@ const Header = () => {
   return (
     <div>
       <Head>
-        <title>Lena Ebner Portfolio</title>
-        <meta property="og:title" content="Lena Ebner Portfolio" key="title" />
+        <title>Lena Ebner</title>
+        <meta property="og:title" content="Lena Ebner" key="title" />
         <meta property="og:charset" content="UTF-8" key="charset" />
         <meta
           property="og:description"
@@ -52,7 +52,7 @@ const Header = () => {
       </Head>
       <header
         className={`${styles.header} ${
-          headerFixed ? styles.header__fixed : ''
+          headerFixed ? styles.header__fixed : ""
         }`}
       >
         <div>
@@ -63,16 +63,17 @@ const Header = () => {
               height="100rem"
               priority={true}
               src={`${
-                headerFixed ? '/images/logoblack.png' : '/images/logowhite.png'
+                headerFixed ? "/images/logoblack.png" : "/images/logowhite.png"
               }`}
               alt="Lena Ebner Logo"
+              loading="eager"
             />
           </a>
         </div>
         <button
           onClick={toogleMenu}
           className={`${styles.nav__tgl} ${
-            navVisibility ? styles.nav__tgl_toggled : ''
+            navVisibility ? styles.nav__tgl_toggled : ""
           }`}
           type="button"
           aria-label="toggle menu"
@@ -80,7 +81,7 @@ const Header = () => {
           <span aria-hidden="true"></span>
         </button>
         <nav
-          className={`${styles.nav} ${headerFixed ? styles.nav__fixed : ''}`}
+          className={`${styles.nav} ${headerFixed ? styles.nav__fixed : ""}`}
         >
           <ul className={styles.nav__list}>
             {navItems.map((item) => {
@@ -94,7 +95,7 @@ const Header = () => {
         </nav>
         <nav
           className={`${styles.nav_mobile} ${
-            navVisibility ? styles.nav_mobile__visible : ''
+            navVisibility ? styles.nav_mobile__visible : ""
           }`}
         >
           <ul className={styles.nav__list}>

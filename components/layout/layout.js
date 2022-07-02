@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import Link from 'next/link'
-import React from 'react'
-import Footer from '../footer/footer'
-import Header from '../header/header'
-import styles from './layout.module.scss'
+import Link from "next/link"
+import Footer from "../footer/footer"
+import Header from "../header/header"
+import styles from "./layout.module.scss"
 
-export const siteTitle = 'Lena Ebner Portfolio'
+export const siteTitle = "Lena Ebner Portfolio"
 
 const Layout = ({ children, home }) => {
   return (
@@ -14,7 +13,7 @@ const Layout = ({ children, home }) => {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
+          <Link href="/#projects">
             <a>← Back to home</a>
           </Link>
         </div>

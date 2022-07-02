@@ -1,5 +1,4 @@
-import React from 'react'
-import styles from './skills.module.scss'
+import styles from "./skills.module.scss"
 
 const Skills = () => {
   return (
@@ -14,7 +13,7 @@ const Skills = () => {
           Apps
         </li>
         <li>
-          <span>Game-Development: </span>Unity, Aframe.io, ARCore
+          <span>Game-Development: </span>Unity, Aframe.io, ARCore, Babylon.js
         </li>
         <li>
           <span>Photography</span> &amp; <span>Video Editing</span>
@@ -26,9 +25,9 @@ const Skills = () => {
       <div>
         <h3 className={styles.technologies}>Technologies I use</h3>
         <p>
-          C#, HTML, CSS, SASS, Php, JavaScript, TypeScript, Node.js, WordPress,
-          Kotlin, Flutter, Next.js, React, Ruby on Rails, SQL, Python, ARCore,
-          Linux, Firebase, Linux, PostgreSQL, MySQL, Docker ...
+          C#, .Net, HTML, CSS, SASS, Php, JavaScript, TypeScript, Node.js,
+          WordPress, Kotlin, Flutter, Next.js, React, Ruby on Rails, Angular,
+          SQL, Python, ARCore, Linux, Firebase, PostgreSQL, MySQL, Docker ...
         </p>
       </div>
     </section>

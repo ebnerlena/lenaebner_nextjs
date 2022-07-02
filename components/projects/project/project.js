@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import styles from '../projects.module.scss'
+import Image from "next/image"
+import Link from "next/link"
+import styles from "../projects.module.scss"
 
 const Project = ({ id, title, date, text, image }) => {
   return (
@@ -10,13 +9,13 @@ const Project = ({ id, title, date, text, image }) => {
       <Link href={`/projects/${id}`}>
         <a>
           <h3>{title}</h3>
-          <div>
+          <div className={styles.image__wrapper}>
             <Image
               src={`/images/projects/${image}`}
-              height="2em"
-              width="3em"
+              height="150rem"
+              width="200rem"
               priority={true}
-              layout="responsive"
+              objectFit={"cover"}
               alt={`Project: ${title}`}
             />
           </div>

@@ -1,4 +1,4 @@
-@import '/styles/mixins.scss';
+@import "/styles/mixins.scss";
 
 .projects {
   & > ul {
@@ -42,10 +42,15 @@
         transform: scale(1.03);
       }
 
+      .image__wrapper {
+        // width: 400px;
+      }
+
       div {
         display: flex;
         flex-direction: row;
         justify-content: center;
+
         div {
           width: 80%;
 
@@ -57,6 +62,11 @@
             @include mobile {
               width: 70%;
               height: 200px;
+            }
+
+            span {
+              height: inherit;
+              max-height: 500px !important;
             }
           }
         }

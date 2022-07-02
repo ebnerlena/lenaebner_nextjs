@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
-import 'photoswipe/dist/default-skin/default-skin.css'
-import 'photoswipe/dist/photoswipe.css'
-import React from 'react'
-import { Gallery, Item } from 'react-photoswipe-gallery'
-import styles from './photography.module.scss'
+import "photoswipe/dist/photoswipe.css"
+import { Gallery, Item } from "react-photoswipe-gallery"
+import styles from "./photography.module.scss"
 
 const PhotoGallery = ({ photos }) => {
   return (
@@ -25,6 +23,7 @@ const PhotoGallery = ({ photos }) => {
                     ref={ref}
                     onClick={open}
                     src={`/images/photography/${fileName}`}
+                    loading="lazy"
                   />
                 )}
               </Item>

@@ -1,15 +1,16 @@
-import moment from 'moment'
-import React from 'react'
-import styles from './footer.module.scss'
+import moment from "moment"
+import styles from "./footer.module.scss"
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
         <p>
-          &copy; Ebner Lena <span>{moment().format('YYYY')}</span>
+          &copy; Ebner Lena{" "}
+          <span>
+            {moment().format("YYYY")} | Mondseestaße 111, 5310 St. Lorenz
+          </span>
         </p>
-        <p>[ all rights are reserved by the respective owner ]</p>
       </div>
     </footer>
   )

@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
-import Image from 'next/image'
-import React from 'react'
-import { BsCalendar3 } from 'react-icons/bs'
-import { FaCode, FaLink, FaUniversity } from 'react-icons/fa'
-import Date from '../../components/date'
-import Layout from '../../components/layout/layout'
-import ProjectLink from '../../components/projectLink/projectLink'
-import { getAllProjectsIds, getProjectData } from '../../lib/projects'
-import styles from './project.module.scss'
+import Image from "next/image"
+import { BsCalendar3 } from "react-icons/bs"
+import { FaCode, FaLink, FaUniversity } from "react-icons/fa"
+import Date from "../../components/date"
+import Layout from "../../components/layout/layout"
+import ProjectLink from "../../components/projectLink/projectLink"
+import { getAllProjectsIds, getProjectData } from "../../lib/projects"
+import styles from "./project.module.scss"
 
 export default function Post({ projectData }) {
   return (
@@ -22,6 +21,8 @@ export default function Post({ projectData }) {
                 width="3em"
                 layout="responsive"
                 alt={`Project: ${projectData.title}`}
+                loading="eager"
+                priority
               />
             </div>
             <h1 className={styles.project__title}>{projectData.title}</h1>
@@ -34,7 +35,7 @@ export default function Post({ projectData }) {
             <h3>{projectData.short}</h3>
             <div className={styles.project__date_container}>
               <BsCalendar3 />
-              Done:{' '}
+              Done:{" "}
               <Date
                 dateString={projectData.date}
                 className={styles.project__date}
