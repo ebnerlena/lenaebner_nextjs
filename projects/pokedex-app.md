@@ -1,11 +1,11 @@
 ---
-title: 'Pokedex App'
-date: '2021-06-01'
-short: 'Native Android app build with Kolin Compose'
-repo_url: 'https://github.com/ebnerlena/pokedex'
-portfolio_link: ''
-deploy_url: ''
-image: 'pokedex.png'
+title: "Pokedex App"
+date: "2021-06-01"
+short: "Native Android app build with Kotlin Compose"
+repo_url: "https://github.com/ebnerlena/pokedex"
+portfolio_link: ""
+deploy_url: ""
+image: "pokedex.png"
 ---
 
 Pokedex is a pokemon app, which is connected to the official Pokemon API to

@@ -1,11 +1,11 @@
 ---
-title: 'SchnitzelRally App'
-date: '2021-02-01'
-short: 'Ruby on Rails Application using Websockets and leaftlet.js'
-repo_url: 'https://gitlab.mediacube.at/fhs44429/mmp2a_schnitzeljagd'
-portfolio_link: 'https://portfolio.fh-salzburg.ac.at/projects/2021-schnitzelrally'
-deploy_url: 'https://schnitzelrally.projects.multimediatechnology.at/'
-image: 'schnitzelrally.jpg'
+title: "SchnitzelRally App"
+date: "2021-02-01"
+short: "Ruby on Rails Application using Websockets and leaftlet.js"
+repo_url: "https://gitlab.mediacube.at/fhs44429/mmp2a_schnitzeljagd"
+portfolio_link: "https://portfolio.fh-salzburg.ac.at/projects/2021-schnitzelrally"
+deploy_url: ""
+image: "schnitzelrally.jpg"
 ---
 
 This project was developed during one week as a semester project for my studies in

@@ -1,11 +1,11 @@
 ---
-title: 'Homepage of Chris Hofer'
-date: '2020-12-15'
-short: 'A website created as a custom Wordpress theme using with Timber Templating'
-repo_url: 'https://github.com/ebnerlena/chofer_ebner_soelder'
-portfolio_link: ''
-deploy_url: ''
-image: 'chrishofer.png'
+title: "Homepage of Chris Hofer"
+date: "2020-12-15"
+short: "A website created as a custom Wordpress theme using Timber Templating"
+repo_url: "https://github.com/ebnerlena/chofer_ebner_soelder"
+portfolio_link: ""
+deploy_url: ""
+image: "chrishofer.png"
 ---
 
 This project's aim was to build a homepage for a singer called Chris Hofer.

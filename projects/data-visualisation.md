@@ -1,11 +1,11 @@
 ---
-title: 'Data Visualisation Tool'
-date: '2021-06-22'
-short: 'React App using Deck.gl and Mapbox for visualisation'
-repo_url: 'https://github.com/development-with-benjamin/orbital-penguin'
-portfolio_link: ''
-deploy_url: 'https://vm-fuchsia.multimediatechnology.at/'
-image: 'data-visualisation.jpg'
+title: "Data Visualisation Tool"
+date: "2021-06-22"
+short: "React App using Deck.gl and Mapbox for visualization"
+repo_url: "https://github.com/development-with-benjamin/orbital-penguin"
+portfolio_link: ""
+deploy_url: ""
+image: "data-visualisation.jpg"
 ---
 
 This project was developed for a Deep Data in Deep Space course of my studies,
